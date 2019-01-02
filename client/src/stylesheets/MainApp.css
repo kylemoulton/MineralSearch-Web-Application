@@ -1,0 +1,27 @@
+html, body, div, span, p {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root, #subRoot {
+    height: 100%;
+}
+
+#subRoot {
+    display: flex;
+    flex-direction: column;
+}
+
+#mainContent > div {
+    height: auto;
+    width: 50%;
+    padding: 10px 20px;
+    margin: 30px auto 30px auto;
+    background: #CCC;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+#mainContent {
+    flex: 1;
+}

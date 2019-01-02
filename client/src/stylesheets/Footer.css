@@ -1,0 +1,12 @@
+footer {
+    width: 100%;
+    min-height: 75px;
+    margin: 0;
+    padding: 0;
+}
+
+footer div {
+    border-top: 2px solid #000;
+    height: 75px;
+    background: #777;
+}

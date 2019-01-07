@@ -41,6 +41,27 @@ let mineralPropertyMap = {
     "Optical Properties": "opticalprop"
 };
 
+let commonValues = {};
+Mineral.find({"mohsLow": {"$lte": 1.0}}, (err, found) => {
+    console.log(found);
+    found.forEach(mineral => {
+        Object.keys(mineral).forEach(category => {
+            if (commonValues[category]) {
+                if (commonValues[category].indexOf(mineral[category]) === -1)
+                commonValues[category].push(mineral[category]);
+            } else {
+                commonValues[category] = [];
+                commonValues[category].push(mineral[category]);
+            }
+        });
+    });
+});
+
+console.log(commonValues);
+
+
+
+
 app.post('/api/search/', async (req, res) => {
     let query = {};
     let searchParams = req.body;
